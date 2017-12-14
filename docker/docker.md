@@ -3,6 +3,8 @@
 ## 1.docker概念
 #### 1.1仓库
 #### 1.2镜像
+    镜像是分层的，dockerfile的每一行都会对应一个分层，并且docker的分层是只读的，当docker实例化出来一个容器的时候，这个容器也会有一个分层，但是这个分层是可读可写的。
+    每一个分层都有一个ID与之对应
 #### 1.3容器
 
 ## 2.docker命令（以nginx镜像为例）
@@ -65,11 +67,6 @@ docker ps -a
 #### 2.3 查看正在运行的docker容器
 ```apple js
 docker ps
-```
-
-#### 2.4 运行docker容器
-```apple js
-docker run nginx
 ```
 
 #### 2.4 停止运行docker容器
