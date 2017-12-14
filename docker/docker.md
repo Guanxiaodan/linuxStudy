@@ -30,12 +30,38 @@ docker rmi nginx
 docker commit -m '提交信息' CONTAINER ID nginx-newOne
 ```
 还有一种方式是通过文件dockerfile来创建新的镜像
+```apple js
+// 创建dackerfile
+touch Dockerfile
+
+// 写dockerfile内容
+FROM alpine:latest
+MAINTAINER xbf
+CMD echo "this is my first dockerfile"
+
+// 生成docker镜像
+docker build -t first_docker .
+
+// 检查是否镜像是否生成
+docker images
+
+// 运行这个镜像
+docker run first_docker
+
+// 乐意发现打印出了 this is my first dockerfile
+
+/**
+* 参数说明
+* -t first_docker是给新建的docker一个叫first_docker的名字
+* . 指定路径(必须是个文件夹)，当然得把dockerfile包含在内
+/ 
+```
 
 #### 2.6 查看所有的docker容器
 ```apple js 
 docker ps -a
 ```
-
+ 
 #### 2.3 查看正在运行的docker容器
 ```apple js
 docker ps
